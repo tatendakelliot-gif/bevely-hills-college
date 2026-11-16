@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Beverly Hills College | Enrollment 2027</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --yellow: #ffcc00;
+    --black: #111111;
+    --cream: #fffbea;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #dddddd;
+    color: #111;
+    line-height: 1.4;
+}
+
+/* A4 PAGE DESIGN */
+
+.sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 12px auto;
+    padding: 10mm;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SCHOOL HEADER */
+
+header {
+    background: var(--yellow);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 8px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    background: white;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+header p {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 9px;
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* ENROLLMENT BANNER */
+
+.hero {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero h2 {
+    color: var(--yellow);
+    font-size: 30px;
+}
+
+.hero p {
+    margin: 6px;
+    font-size: 13px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: black;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+/* SECTION HEADINGS */
+
+.section {
+    text-align: center;
+    font-size: 19px;
+    margin: 14px 0 8px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--yellow);
+}
+
+/* INFORMATION CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.card {
+    background: var(--cream);
+    border: 1px solid #e5c65a;
+    border-radius: 7px;
+    padding: 12px;
+}
+
+.card h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+/* PASS RATE */
+
+.stats {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.stats .card {
+    flex: 1;
+}
+
+.big {
+    font-size: 27px;
+    font-weight: bold;
+    color: #b38b00;
+}
+
+/* SUBJECTS: ONE SUBJECT PER LINE */
+
+.subjects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.subject-card {
+    background: var(--cream);
+    border: 1px solid #e5c65a;
+    border-radius: 7px;
+    padding: 12px;
+}
+
+.subject-card h3 {
+    text-align: center;
+    background: var(--yellow);
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.subject-list {
+    list-style: none;
+}
+
+.subject-list li {
+    font-size: 12px;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eadca7;
+}
+
+.subject-list li:last-child {
+    border-bottom: none;
+}
+
+/* CONTACT DETAILS */
+
+.contact {
+    background: var(--cream);
+    border: 1px solid #e5c65a;
+    border-radius: 7px;
+    text-align: center;
+    padding: 14px;
+}
+
+.contact p {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.contact a {
+    color: black;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+footer strong {
+    color: var(--yellow);
+}
+
+.page-label {
+    position: absolute;
+    bottom: 5mm;
+    right: 10mm;
+    font-size: 9px;
+    color: #777;
+}
+
+/* PHONE DISPLAY */
+
+@media screen and (max-width: 850px) {
+
+    body {
+        background: white;
+    }
+
+    .sheet {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 15px;
+        overflow: visible;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .grid,
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-list li {
+        font-size: 14px;
+    }
+
+    .page-label {
+        position: static;
+        text-align: right;
+        margin-top: 10px;
+    }
+}
+
+/* PRINT TWO A4 PAGES */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        background: white;
+    }
+
+    .sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 10mm;
+        overflow: hidden;
+        page-break-after: always;
+    }
+
+    .sheet:last-child {
+        page-break-after: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+
+<div class="sheet">
+
+<header>
+<img src="beverly_hills_college_sticker-15.png" class="logo" alt="Beverly Hills College Badge">
+
+<div>
+<h1>BEVERLY HILLS COLLEGE</h1>
+<p>We give you wings to fly</p>
+</div>
+</header>
+
+<nav>
+QUALITY EDUCATION | TALENT DEVELOPMENT | ACADEMIC EXCELLENCE
+</nav>
+
+<div class="hero">
+<span class="tag">ENROLLMENT 2027 NOW OPEN</span>
+
+<h2>YOUR FUTURE STARTS HERE</h2>
+
+<p><b>Form 1 to Upper 6</b></p>
+
+<p>Pure Sciences | Commercials | Arts</p>
+
+<p>Knowledge through education builds your future.</p>
+</div>
+
+<h2 class="section">ABOUT OUR SCHOOL</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>QUALIFIED TEACHERS</h3>
+<p>Dedicated and qualified teachers committed to academic achievement and learner progress.</p>
+</div>
+
+<div class="card">
+<h3>AFFORDABLE FEES</h3>
+<p>Affordable education. Contact the administration for current fees and payment arrangements.</p>
+</div>
+
+<div class="card">
+<h3>INDIVIDUAL ATTENTION</h3>
+<p>We support learners in developing their abilities and achieving their academic potential.</p>
+</div>
+
+<div class="card">
+<h3>TALENT DEVELOPMENT</h3>
+<p>Sports, clubs and educational activities help nurture talents and leadership.</p>
+</div>
+
+</div>
+
+<h2 class="section">OUR ACADEMIC PROGRESS</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>2024 PASS RATE</h3>
+<div class="big">56.9%</div>
+</div>
+
+<div class="card">
+<h3>2025 PASS RATE</h3>
+<div class="big">84.2%</div>
+</div>
+
+</div>
+
+<p style="text-align:center;font-size:12px;margin:8px">
+Looking forward to continued academic improvement.
+</p>
+
+<h2 class="section">ACADEMIC PROGRAMMES & SUBJECTS</h2>
+
+<div class="subjects">
+
+<!-- O LEVEL SUBJECTS -->
+
+<div class="subject-card">
+
+<h3>O-LEVEL SUBJECTS</h3>
+
+<ul class="subject-list">
+<li>Mathematics</li>
+<li>English</li>
+<li>Shona</li>
+<li>Computer Science</li>
+<li>Combined Science</li>
+<li>Heritage Studies</li>
+<li>FRS</li>
+<li>BES</li>
+<li>Economics</li>
+<li>Physics</li>
+<li>Biology</li>
+<li>Chemistry</li>
+<li>History</li>
+<li>Geography</li>
+<li>Literature</li>
+</ul>
+
+</div>
+
+<!-- A LEVEL SUBJECTS -->
+
+<div class="subject-card">
+
+<h3>A-LEVEL SUBJECTS</h3>
+
+<ul class="subject-list">
+<li>Computer Science</li>
+<li>Economics</li>
+<li>BES</li>
+<li>Geography</li>
+<li>Pure Mathematics</li>
+<li>Pure Physics</li>
+<li>Pure Biology</li>
+<li>Pure Chemistry</li>
+<li>Sociology</li>
+<li>FRS</li>
+<li>Literature</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+<strong>BEVERLY HILLS COLLEGE</strong>
+| Success | Reliable Care | Integrity
+</footer>
+
+<div class="page-label">PAGE 1 OF 2</div>
+
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+
+<div class="sheet">
+
+<header>
+<img src="beverly_hills_college_sticker-15.png" class="logo" alt="Beverly Hills College Badge">
+
+<div>
+<h1>BEVERLY HILLS COLLEGE</h1>
+<p>We give you wings to fly</p>
+</div>
+</header>
+
+<nav>
+SPORTS | CLUBS | STUDENT LIFE | ENROLLMENT
+</nav>
+
+<h2 class="section">SPORTS & EXTRACURRICULAR ACTIVITIES</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>SPORTS & MIND GAMES</h3>
+<p>
+Ball games, athletics and mind games promoting fitness, teamwork, discipline and critical thinking.
+</p>
+</div>
+
+<div class="card">
+<h3>CLUBS & TALENT</h3>
+<p>
+Developmental Entertainment Organization (DEO), Toastmasters, Scripture Union, Dance, Drama, Choir and Debates.
+</p>
+</div>
+
+</div>
+
+<h2 class="section">HOLIDAY VACATIONS & FREE WI-FI</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>HOLIDAY VACATIONS</h3>
+<p>
+Enjoy school holiday breaks, refresh your mind and prepare for another exciting academic term. We value learning, recreation and personal development.
+</p>
+</div>
+
+<div class="card">
+<h3>FREE WI-FI</h3>
+<p>
+Access educational resources and stay connected through the school's free Wi-Fi facility.
+</p>
+</div>
+
+</div>
+
+<h2 class="section">ENROLLMENT 2027</h2>
+
+<div class="contact">
+
+<p><b>Admissions: Form 1 to Upper 6</b></p>
+
+<p>Pure Sciences | Commercials | Arts</p>
+
+<p>Contact the school for admission requirements, fees and available places.</p>
+
+<p>
+<a href="https://wa.me/263772990470?text=Hello%20Beverly%20Hills%20College%2C%20I%20would%20like%20enrollment%20information%20for%202027">
+WHATSAPP ENROLLMENT ENQUIRY
+</a>
+</p>
+
+</div>
+
+<h2 class="section">CONTACT & LOCATION</h2>
+
+<div class="contact">
+
+<p>
+<b>Telephone:</b>
++263 772 990 470
+</p>
+
+<p>
++263 773 280 184
+</p>
+
+<p>
++263 772 881 431
+</p>
+
+<p>
+<b>Email:</b>
+beverlyhillscollege@gmail.com
+</p>
+
+<p>
+<b>Address:</b>
+No. 20475 Unit G, Mangwende Drive, Makoni, Chitungwiza
+</p>
+
+<p>
+<b>TikTok:</b>
+@beverlyhillscollege
+</p>
+
+<p>
+<a href="https://www.google.com/maps/search/?api=1&query=No.+20475+Unit+G+Mangwende+Drive+Makoni+Chitungwiza">
+OPEN LOCATION ON GOOGLE MAPS
+</a>
+</p>
+
+</div>
+
+<div class="hero" style="margin-top:12px;padding:15px">
+
+<h2 style="font-size:24px">
+TELL A FRIEND TO TELL A FRIEND!
+</h2>
+
+<p>Beverly Hills College is the school for better results.</p>
+
+<p><b>YOUR SUCCESS IS OUR COMMITMENT</b></p>
+
+</div>
+
+<footer>
+<strong>BEVERLY HILLS COLLEGE</strong>
+| ENROLLMENT 2027
+| We give you wings to fly
+</footer>
+
+<div class="page-label">PAGE 2 OF 2</div>
+
+</div>
+
+</body>
+</html>
